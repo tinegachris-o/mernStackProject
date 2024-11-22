@@ -6,13 +6,15 @@ require('dotenv').config()
 let port= process.env.PORT
 const connectDB= require('./connection.js')
 //console.log('hello ',connectDB());
-
+const cors=require('cors')
 const schema= require('./schema/schema.js')
 // graphql http
 
 ///pasword=
 
-//middleware
+////middleware
+
+app.use(cors())
 app.use('/graphql',graphqlHTTP({
     schema,
     graphiql:true
